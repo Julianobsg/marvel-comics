@@ -17,3 +17,13 @@
 body {
   background-color: #2B2B2B;
 }
+
+.comics {
+  margin: 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comics-cover {
+  margin: 10px;
+}
