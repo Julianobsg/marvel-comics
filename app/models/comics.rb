@@ -1,4 +1,4 @@
-class Comic < ApplicationRecord
+class Comics < ApplicationRecord
   def self.marvel_comics
     marvel.comics(orderBy: 'focDate')
   end
