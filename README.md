@@ -1,24 +1,17 @@
-# README
+# Marvel comics
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+This is a simple rails project, the main goal here is to list a the most recent marvel comics and  gives you the possibility to favorite those, the favorite ones will be listed first.
 
 * Ruby version
-
+2.7.2
 * System dependencies
-
-* Configuration
+I uses yarn 1.22.10 and node 16.3
+It needes ruby and bundler installed.
 
 * Database creation
-
-* Database initialization
+You need to install postgres and execute
+`rails db:create db:migrate`
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run the tests with rspec
+`rspec`
