@@ -2,7 +2,13 @@ class Comics < ApplicationRecord
   scope :favorites, -> { where(favorite: true) }
 
   def self.all_comics(character_names)
-    favorites + marvel_comics(character_names, 20 - favorites.count).map { |m_comics| Comics.new(marvel_id: m_comics.id, thumbnail_path: m_comics.thumbnail.path, thumbnail_extension: m_comics.thumbnail.extension) }
+    (favorites + complementary_comics(character_names))[0..19]
+  end
+
+  def self.complementary_comics(character_names)
+    marvel_comics(character_names, 20 + favorites.count).map do |m_comics|
+      Comics.new(marvel_id: m_comics.id, thumbnail_path: m_comics.thumbnail.path, thumbnail_extension: m_comics.thumbnail.extension)
+    end.reject { |c| favorites.pluck(:marvel_id).include?(c.marvel_id) }
   end
 
   def self.marvel_comics(character_names, limit=20)

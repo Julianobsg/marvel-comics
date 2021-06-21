@@ -9,6 +9,13 @@ RSpec.describe Comics, type: :model do
       expect(all_comics[0].thumbnail.path).to eq 'http://i.annihil.us/u/prod/marvel/i/mg/8/04/58e69de9d1fed'
     end
 
+    it 'does not lists duplicated comics' do
+      Comics.create(marvel_id: 21, favorite: true)
+      all_comics = Comics.all_comics('')
+      expect(all_comics.pluck(:marvel_id).count).to be 20
+      expect(all_comics.pluck(:marvel_id).group_by{ |e| e }[21].count).to be 1
+    end
+
     it 'filters comics by character' do
       filtered_comics = Comics.marvel_comics('storm')
       expect(filtered_comics.count).to be 5
