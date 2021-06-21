@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @comics = Comic.marvel_comics
+    @comics = Comics.marvel_comics
   end
 end
