@@ -1,6 +1,12 @@
 class Comics < ApplicationRecord
-  def self.marvel_comics
-    marvel.comics(orderBy: 'focDate')
+  def self.marvel_comics(character_names = nil)
+    marvel.comics({ orderBy: 'focDate', characters: characters(character_names) }.compact)
+  end
+
+  def self.characters(character_names)
+    return unless character_names
+
+    marvel.characters(nameStartsWith: character_names).pluck(:id).join(',')
   end
 
   def self.marvel
