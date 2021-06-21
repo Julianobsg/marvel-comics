@@ -12,9 +12,11 @@ gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'marvel_api'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 5.0.0'
 end
 

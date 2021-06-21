@@ -5,9 +5,10 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'vcr'
 
-VCR.config do |c|
+VCR.configure do |c|
   c.cassette_library_dir     = 'spec/cassettes'
   c.hook_into :faraday
+  c.configure_rspec_metadata!
   c.filter_sensitive_data('<API_KEY>') { ENV['MARVEL_PUBLIC_KEY'] }
   c.default_cassette_options = {
     record: :new_episodes,
