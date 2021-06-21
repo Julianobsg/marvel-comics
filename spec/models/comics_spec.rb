@@ -32,4 +32,11 @@ RSpec.describe Comics, type: :model do
       expect(filtered_comics[3].characters.items.map(&:name)).to include 'Peter Parker'
     end
   end
+
+  describe '.characters', vcr: true do
+    it 'returns empty if no character found' do
+      characters = Comics.characters('non existent character')
+      expect(characters).to eql ''
+    end
+  end
 end

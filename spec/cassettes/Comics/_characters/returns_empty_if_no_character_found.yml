@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://gateway.marvel.com/v1/public/characters?apikey=<API_KEY>&hash=e228f7002cb752d68dfa17886ba57b57&nameStartsWith=non+existent+character&ts=2021-06-21+11%3A26%3A54+-0300
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - marvel_api gem 0.2.1
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      etag:
+      - 79ef3436d0dc139b17693635b99776556e29f495
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Mon, 21 Jun 2021 14:29:12 GMT
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJjb2RlIjoyMDAsInN0YXR1cyI6Ik9rIiwiY29weXJpZ2h0IjoiwqkgMjAyMSBNQVJWRUwiLCJhdHRyaWJ1dGlvblRleHQiOiJEYXRhIHByb3ZpZGVkIGJ5IE1hcnZlbC4gwqkgMjAyMSBNQVJWRUwiLCJhdHRyaWJ1dGlvbkhUTUwiOiI8YSBocmVmPVwiaHR0cDovL21hcnZlbC5jb21cIj5EYXRhIHByb3ZpZGVkIGJ5IE1hcnZlbC4gwqkgMjAyMSBNQVJWRUw8L2E+IiwiZXRhZyI6Ijc5ZWYzNDM2ZDBkYzEzOWIxNzY5MzYzNWI5OTc3NjU1NmUyOWY0OTUiLCJkYXRhIjp7Im9mZnNldCI6MCwibGltaXQiOjIwLCJ0b3RhbCI6MCwiY291bnQiOjAsInJlc3VsdHMiOltdfX0=
+  recorded_at: Mon, 21 Jun 2021 14:26:55 GMT
+recorded_with: VCR 6.0.0
