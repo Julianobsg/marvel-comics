@@ -6,6 +6,6 @@
 
       <%= form.submit '', type: :image, src: comic.cover_image %>
     <% end %>
-    <%= image_tag "heart_#{comic.favorite ? 'on' : 'off'}.png" %>
+    <%= image_tag "heart_#{comic.favorite ? 'on' : 'off'}.png", class: 'favorite' %>
   </div>
 <% end %>

@@ -24,11 +24,19 @@ body {
   flex-wrap: wrap;
 }
 
-.comics-cover {
-  margin: 10px;
-}
-
 .comics-search {
   height: 100px;
   background-color: #DB2424;
+}
+
+.comics-cover {
+  margin: 10px;
+  position: relative;
+}
+
+.comics-cover .favorite  {
+  position: absolute;
+  top: 15px;
+  left: 250px;
+  z-index: 2;
 }
