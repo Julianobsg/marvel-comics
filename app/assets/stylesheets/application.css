@@ -27,6 +27,9 @@ body {
 .comics-search {
   height: 100px;
   background-color: #DB2424;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .comics-cover {

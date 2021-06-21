@@ -1,5 +1,6 @@
 <div data-controller="comics" data-comics-url-value="/comics.html">
   <div class="comics-search">
+    <%= image_tag 'marvel_logo.png', class: 'logo' %>
     <input data-comics-target="query" type="text" value="">
     <button data-action="click->comics#search">Search</button>
   </div>
