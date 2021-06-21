@@ -1,7 +1,9 @@
-<div class="comics">
-  <% @comics.each do |comic| %>
-    <div class="comics-cover">
-      <%= image_tag "#{comic.thumbnail.path}/portrait_uncanny.#{comic.thumbnail.extension}" %>
-    </div>
-  <% end %>
+<div data-controller="comics" data-comics-url-value="/comics.html">
+  <div class="comics-search">
+    <input data-comics-target="query" type="text" value="">
+    <button data-action="click->comics#search">Search</button>
+  </div>
+  <div data-comics-target="list" class="comics">
+    loading...
+  </div>
 </div>

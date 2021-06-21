@@ -1,6 +1,6 @@
 class Comics < ApplicationRecord
-  def self.marvel_comics(character_names = nil)
-    marvel.comics({ orderBy: 'focDate', characters: characters(character_names) }.compact)
+  def self.marvel_comics(character_names)
+    marvel.comics({ orderBy: 'focDate', characters: characters(character_names) }.reject { |_, v| v.to_s.empty? })
   end
 
   def self.characters(character_names)

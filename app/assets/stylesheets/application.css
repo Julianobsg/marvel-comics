@@ -27,3 +27,8 @@ body {
 .comics-cover {
   margin: 10px;
 }
+
+.comics-search {
+  height: 100px;
+  background-color: #DB2424;
+}
