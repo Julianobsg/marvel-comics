@@ -1,11 +1,11 @@
 <% @comics.each do |comic| %>
   <div class="comics-cover">
     <%= form_with model: comic, url: comics_favorite_path(comic.marvel_id), data: { action: "ajax:success->comics#search" } do |form| %>
+      <%= image_tag "heart_#{comic.favorite ? 'on' : 'off'}.png", class: 'favorite' %>
       <%= form.hidden_field :thumbnail_path %>
       <%= form.hidden_field :thumbnail_extension %>
 
       <%= form.submit '', type: :image, src: comic.cover_image %>
     <% end %>
-    <%= image_tag "heart_#{comic.favorite ? 'on' : 'off'}.png", class: 'favorite' %>
   </div>
 <% end %>
