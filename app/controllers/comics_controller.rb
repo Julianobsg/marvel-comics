@@ -9,6 +9,6 @@ class ComicsController < ApplicationController
   end
 
   def comics_params
-    params.permit(:thumbnail_path, :thumbnail_extension)
+    params.require(:comics).permit(:thumbnail_path, :thumbnail_extension)
   end
 end
