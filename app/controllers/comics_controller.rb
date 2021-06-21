@@ -1,6 +1,6 @@
 class ComicsController < ApplicationController
   def index
-    @comics = Comics.marvel_comics(params[:query])
+    @comics = Comics.all_comics(params[:query])
   end
 
   def favorite

@@ -1,5 +1,5 @@
 <% @comics.each do |comic| %>
   <div class="comics-cover">
-    <%= image_tag "#{comic.thumbnail.path}/portrait_uncanny.#{comic.thumbnail.extension}" %>
+    <%= image_tag comic.cover_image %>
   </div>
 <% end %>
