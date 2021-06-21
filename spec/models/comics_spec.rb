@@ -38,5 +38,10 @@ RSpec.describe Comics, type: :model do
       characters = Comics.characters('non existent character')
       expect(characters).to eql ''
     end
+
+    it 'returns one character if other was not found' do
+      characters = Comics.characters('rogue, non existent character')
+      expect(characters).to eql '1009546,1010967,1017319,1010966,1017478'
+    end
   end
 end
