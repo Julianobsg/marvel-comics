@@ -5,7 +5,7 @@ class ComicsController < ApplicationController
 
   def favorite
     comics = Comics.find_or_create_by(marvel_id: params[:comics_id])
-    comics.update(comics_params.merge(favorite: true))
+    comics.update(comics_params.merge(favorite: !comics.favorite))
   end
 
   def comics_params

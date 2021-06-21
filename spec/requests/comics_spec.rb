@@ -22,4 +22,10 @@ RSpec.describe 'Comics requests spec', type: :request do
     post '/comics/10/favorite', params: { comics: { thumbnail_path: 'url', thumbnail_extension: 'jpg' } }
     expect(Comics.last).to have_attributes(marvel_id: 10, thumbnail_path: 'url', thumbnail_extension: 'jpg', favorite: true)
   end
+
+  it 'unfavorites a favorite comics' do
+    Comics.create(marvel_id: 10, thumbnail_path: 'http://favorite/cover', thumbnail_extension: 'jpg', favorite: true)
+    post '/comics/10/favorite', params: { comics: { thumbnail_path: 'url', thumbnail_extension: 'jpg' } }
+    expect(Comics.last).to have_attributes(marvel_id: 10, thumbnail_path: 'url', thumbnail_extension: 'jpg', favorite: false)
+  end
 end
