@@ -17,5 +17,12 @@ RSpec.describe Comics, type: :model do
       expect(characters).to include 'Storm'
       expect(characters).to include 'X-Men'
     end
+
+    it 'filters comics by multiple characters' do
+      filtered_comics = Comics.marvel_comics('peter parker, wolverine')
+      expect(filtered_comics.count).to be 5
+      expect(filtered_comics[0].characters.items.map(&:name)).to include 'Wolverine'
+      expect(filtered_comics[3].characters.items.map(&:name)).to include 'Peter Parker'
+    end
   end
 end

@@ -6,7 +6,9 @@ class Comics < ApplicationRecord
   def self.characters(character_names)
     return unless character_names
 
-    marvel.characters(nameStartsWith: character_names).pluck(:id).join(',')
+    character_names.split(',').map do |name|
+      marvel.characters(nameStartsWith: name.strip).pluck(:id)
+    end.reject { |c| c.empty? }.join(',')
   end
 
   def self.marvel
